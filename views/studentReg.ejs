@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/img/blackboard.png">
+    <title>DIGITAL CLASSROOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/teacherReg.css">
+
+</head>
+
+<body>
+
+
+    <p class="display-6 text-center mt-5">Register A Student</p>
+
+    <div class="form-box">
+        <form action="" id="student" name="student">
+
+            <div class="mb-3">
+                <input type="text" id="sname" name="sname" class="form-control" placeholder="Student Name">
+            </div>
+
+            <div class="mb-3">
+                <input type="text" id="sid" name="sid" class="form-control" placeholder="Student ID">
+            </div>
+
+            <div class="mb-3">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email">
+            </div>
+
+            <div class="mb-3">
+                <input type="password" id="password" name="password" class="form-control" placeholder="New Password">
+            </div>
+
+            <div class="mb-3">
+
+                <select class="form-select" aria-label="Default select example" name="department" id="department">
+                    
+                    <option disabled selected>Select Department</option>
+                    <% let dept=["CSE","EEE","BBA","Textile","English","Bangla"]; %>
+                        <% for(let x=0;x<dept.length;x++){ %>
+
+                            <option value="<%= dept[x] %>">
+                                <%= dept[x] %>
+                            </option>
+
+                            <% } %>
+                </select>
+
+            </div>
+
+           
+
+            <div class="mb-3">
+
+                <select class="form-select" aria-label="Default select example" name="gender" id="gender">
+                    
+                    <option disabled selected>Select Gender</option>
+                    <% let gen=["Male","Female","Custom"]; %>
+                        <% for(let x=0;x<gen.length;x++){ %>
+
+                            <option value="<%= gen[x] %>">
+                                <%= gen[x] %>
+                            </option>
+
+                            <% } %>
+                </select>
+
+            </div>
+
+            <div class="mb-3">
+                <input type="text" id="contact" name="contact" class="form-control" placeholder="Contact No">
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn cbtn-1 w-100">Register</button>
+            </div>
+
+
+
+
+
+        </form>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

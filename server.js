@@ -2,22 +2,14 @@ const express = require('express');
 const app = express();
 const port = 4500;
 
+require('./src/db/conn');
+
+app.use(express.urlencoded());
+app.use(express.json());
 
 app.use(express.static('public'));
 app.set('view engine','ejs');
-
-app.get('/',(req,res)=>{
-    res.render('index');
-});
-
-app.get('/contact',(req,res)=>{
-    res.render('contact');
-});
-
-app.get('/regtec',(req,res)=>{
-    res.render('teacherReg');
-}); 
-
+app.use('/',require('./src/router/router'));
 
 
 app.listen(port,(err)=>{

@@ -9,3 +9,21 @@
     width: 80%;
     margin: 0px auto;
 }
+
+
+.cbtn-1{
+    background: linear-gradient(to right,rgb(248, 4, 150),crimson);
+    color: white;
+}
+.cbtn-2{
+    background: linear-gradient(to right,rgb(156, 2, 138),rgb(220, 20, 190));
+    color: white;
+}
+
+.cbtn-1:hover{
+    color: white;
+}
+
+.cbtn-2:hover{
+    color: white;
+}

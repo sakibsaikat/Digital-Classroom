@@ -15,20 +15,15 @@
 
 <body>
 
-
-    <div class="heading bg-light p-3 d-flex justify-content-between">
-        <div class="left">
-            <p class="display-6 fs-4 text-muted mx-2">NUB DIGITAL CLASSROOM</p>
-        </div>
-        <div class="right">
-            <a href="" class="btn btn-dark me-2">Back</a>
-        </div>
+    <div id="msg-box" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Congrats!</strong> Registration Successful.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
-    <p class="display-6 text-center mt-3">Create A Classroom</p>
+    <p class="display-6 text-center mt-5">Register A Teacher</p>
 
     <div class="form-box">
-        <form action="" id="teacher" name="teacher">
+        <form action="/sendteacherdata" id="teacher" name="teacher" method="POST">
 
             <div class="mb-3">
 
@@ -47,17 +42,8 @@
 
             </div>
 
-
             <div class="mb-3">
-                <input type="text" id="ccode" name="ccode" class="form-control" placeholder="Course Code">
-            </div>
-
-            <div class="mb-3">
-                <input type="text" id="ctitle" name="ccode" class="form-control" placeholder="Course Title">
-            </div>
-
-            <div class="mb-3">
-                <input type="text" id="tname" name="tname" class="form-control" placeholder="Teacher Name">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Teacher Name">
             </div>
             <div class="mb-3">
                 <input type="email" id="email" name="email" class="form-control" placeholder="Email">
@@ -89,7 +75,7 @@
             </div>
 
             <div class="mb-3">
-                <button type="submit" class="btn btn-secondary">Create Room</button>
+                <button type="submit" class="btn cbtn-2 w-100">Register</button>
             </div>
 
 
@@ -98,6 +84,18 @@
 
         </form>
     </div>
+
+    <script>
+        let status = "<%= sendStatus %>";
+        let msg = document.getElementById("msg-box");
+
+        if(status=="true"){
+            msg.style.display="block";
+        }
+        else{
+            msg.style.display="none";
+        }
+    </script>
 
 
 
