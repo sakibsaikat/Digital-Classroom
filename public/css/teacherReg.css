@@ -1,0 +1,11 @@
+.form-box{
+    width: 60%;
+    padding: 20px;
+    margin: 0 auto;
+
+}
+
+.form-box form{
+    width: 80%;
+    margin: 0px auto;
+}
