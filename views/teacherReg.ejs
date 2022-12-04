@@ -15,14 +15,13 @@
 
 <body>
 
-    <div id="msg-box" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Congrats!</strong> Registration Successful.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+   
 
     <p class="display-6 text-center mt-5">Register A Teacher</p>
 
     <div class="form-box">
+       
+
         <form action="/sendteacherdata" id="teacher" name="teacher" method="POST">
 
             <div class="mb-3">
@@ -80,7 +79,10 @@
 
 
 
-
+            <div id="msg-box" class="alert alert-warning alert-dismissible fade show my-2" role="alert">
+                <strong>Congrats!</strong> Registration Successful.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
 
         </form>
     </div>
