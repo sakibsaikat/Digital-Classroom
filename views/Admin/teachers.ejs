@@ -26,61 +26,75 @@
 
                 <div class="row gy-5">
 
+                    <% let x=1 %>
+
+                    <% data.forEach(function(val){ %>
+    
                     <div class="col-md-4">
                         <div class="tcard text-center p-4">
                             <div class="img text-center">
-                                <img src="/img/R.jpg" alt="profile_pic" height="90">
+                                <% if(val.profile){ %>
+                                    <img src="/uploads/<%= val.profile %>" alt="avatar" height="90">
+                                <% }else{ %>
+                                    <img src="/img/avatar.png" alt="avatar" height="90">
+                                <% } %>
                             </div>
-
-                            <p class="fw-bold mt-2 fs-5">Zayed Oyshik</p>
-                            <p class="dept">Department of CSE</p>
-
-                            <!-- Button trigger modal -->
-                            <a href="#" type="button" class="btn cbtn-card btn-sm mt-3" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                                view details
-                            </a>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Teacher Informtaion</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-
-                                            <div class="img text-center">
-                                                <img src="/img/R.jpg" alt="profile_pic" height="90">
-                                            </div>
-                
-                                            <p class="fw-bold mt-2 fs-5">Zayed Oyshik</p>
-                                            
-                                            <div class="add-info">
-                                                <p>Username: zayed@gmail.com </p>
-                                                <p>Password: zayed@gmail.com </p>
-                                                <p>Department: CSE</p>
-                                                <p>Gender: Male </p>
-                                                <p>Contact No: 01723456789 </p>
-                                            
-                                            </div>
-                                            
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-success btn-sm">Edtit</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
+        
+                            <p class="fw-bold mt-2 fs-5"><%= val.name %></p>
+                            <p class="dept">Department of <%= val.department %></p>
+                             <!-- Button trigger modal -->
+                             <a href="#" type="button" class="btn cbtn-card btn-sm mt-3" data-bs-toggle="modal"
+                             data-bs-target="#exampleModal<%= x %>">
+                             view details
+                         </a>
+    
+                         <!-- Modal -->
+                         <div class="modal fade" id="exampleModal<%= x %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                             <div class="modal-dialog modal-dialog-centered">
+                                 <div class="modal-content">
+                                     <div class="modal-header">
+                                         <h5 class="modal-title" id="exampleModalLabel">Teacher Informtaion</h5>
+                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                             aria-label="Close"></button>
+                                     </div>
+                                     <div class="modal-body">
+    
+                                         <div class="img text-center">
+                                            <% if(val.profile){ %>
+                                                <img src="/uploads/<%= val.profile %>" alt="avatar" height="90">
+                                            <% }else{ %>
+                                                <img src="/img/avatar.png" alt="avatar" height="90">
+                                            <% } %>
+                                         </div>
+             
+                                         <p class="fw-bold mt-2 fs-5"><%= val.name %></p>
+                                         
+                                         <div class="add-info">
+                                             <p>Email: <%= val.email %> </p>
+                                             <p>Password: <%= val.password %> </p>
+                                             <p>Department: <%= val.department %></p>
+                                             <p>Gender: <%= val.gender %> </p>
+                                             <p>Contact No: <%= val.contact %> </p>
+                                         
+                                         </div>
+                                         
+                                     </div>
+                                     <div class="modal-footer">
+                                         <button type="button" class="btn btn-success btn-sm">Edtit</button>
+                                         <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                     </div>
+                                 </div>
+                                 <% x++; %>
+                             </div>
+                         </div>
+    
+        
                         </div>
                     </div>
-
+    
+                    <% }) %>
+    
 
 
                 </div>

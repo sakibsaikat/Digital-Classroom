@@ -28,6 +28,9 @@ let TeacherCollection = new mongo.Schema({
         type:String,
         required:true
     },
+    profile:{
+        type:String
+    },
     status:{
         type:String,
         required:true

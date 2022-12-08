@@ -104,8 +104,10 @@ body{
 }
 
 
-#up-btn-1{
+#up-btn{
     width: 100px;
     height: auto;
     border-radius: 50%;
+    border: 3px solid rgb(77, 96, 236);
+    outline: 5px solid rgba(77, 95, 236, 0.300);
 }

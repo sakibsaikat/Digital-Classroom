@@ -18,6 +18,8 @@
 
 <body>
 
+    <% data.forEach(function(val){ %>
+
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -35,12 +37,20 @@
                     </li>
 
                     <li class="nav-item pro-pic">
-                        <img id="img-btn" class="profile-pic" src="/img/avatar.png" alt="">
+                        <% if(val.profile){ %>
+                            <img id="img-btn" class="profile-pic" src="/uploads/<%= val.profile %>" alt="avatar">
+                        <% }else{ %>
+                            <img id="img-btn" class="profile-pic" src="/img/avatar.png" alt="avatar">
+                        <% } %>
 
-                        <form action="/upimg/USER1" method="post" enctype="multipart/form-data">
+                        <form action="/upimg/<%= val.id %>" method="post" enctype="multipart/form-data">
 
                             <div class="up-card text-center">
-                                <img id="up-btn" src="/img/up.png" alt="" width="100">
+                                <% if(val.profile){ %>
+                                    <img id="up-btn" src="/uploads/<%= val.profile %>" alt="" width="100">
+                                <% }else{ %>
+                                    <img id="up-btn" src="/img/up.png" alt="" width="100">
+                                <% } %>
                                 <br>
                                 <input id="up-btn-hide" type="file" name="profile" hidden onchange="document.getElementById('up-btn').src = window.URL.createObjectURL(this.files[0])">
                                 <button type="submit" class="btn btn-dark btn-sm mt-3">Upload</button>
@@ -50,10 +60,10 @@
                         
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown me-5">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Rima Akter
+                            <%= val.name %>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -95,7 +105,7 @@
             </div>
 
 
-            <p class="display-6"><%= userID %></p>
+            <p class="display-6"><%= val.id %></p>
        
 
         </div>
@@ -103,6 +113,8 @@
 
 
     </div>
+
+    <% }) %>
 
 
     <script>
