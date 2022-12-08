@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/admindashboard.css">
+    <link rel="stylesheet" href="/css/teachers.css">
+</head>
+
+<body>
+
+    <div class="main-body d-flex">
+
+        <%- include('./../partials/sidebar.ejs') %>
+
+            <div class="right-contents">
+                <p class="p-3 text-muted display-6 fs-4 text-center">Teachers Infomation</p>
+
+                <div class="row gy-5">
+
+                    <div class="col-md-4">
+                        <div class="tcard text-center p-4">
+                            <div class="img text-center">
+                                <img src="/img/R.jpg" alt="profile_pic" height="90">
+                            </div>
+
+                            <p class="fw-bold mt-2 fs-5">Zayed Oyshik</p>
+                            <p class="dept">Department of CSE</p>
+
+                            <!-- Button trigger modal -->
+                            <a href="#" type="button" class="btn cbtn-card btn-sm mt-3" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                view details
+                            </a>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Teacher Informtaion</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <div class="img text-center">
+                                                <img src="/img/R.jpg" alt="profile_pic" height="90">
+                                            </div>
+                
+                                            <p class="fw-bold mt-2 fs-5">Zayed Oyshik</p>
+                                            
+                                            <div class="add-info">
+                                                <p>Username: zayed@gmail.com </p>
+                                                <p>Password: zayed@gmail.com </p>
+                                                <p>Department: CSE</p>
+                                                <p>Gender: Male </p>
+                                                <p>Contact No: 01723456789 </p>
+                                            
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success btn-sm">Edtit</button>
+                                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

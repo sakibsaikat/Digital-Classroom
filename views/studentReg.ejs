@@ -19,10 +19,10 @@
     <p class="display-6 text-center mt-5">Register A Student</p>
 
     <div class="form-box">
-        <form action="" id="student" name="student">
+        <form action="/sendstudentdata" id="student" name="student" method="post">
 
             <div class="mb-3">
-                <input type="text" id="sname" name="sname" class="form-control" placeholder="Student Name">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Student Name">
             </div>
 
             <div class="mb-3">
@@ -81,12 +81,31 @@
                 <button type="submit" class="btn cbtn-1 w-100">Register</button>
             </div>
 
+            <div id="msg-box" class="alert alert-warning alert-dismissible fade show my-2" role="alert">
+                <strong>Congrats!</strong> Registration Successful.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
 
 
 
 
         </form>
     </div>
+
+
+    
+    <script>
+        let status = "<%= sendStatus %>";
+        let msg = document.getElementById("msg-box");
+
+        if(status=="true"){
+            msg.style.display="block";
+        }
+        else{
+            msg.style.display="none";
+        }
+    </script>
 
 
 

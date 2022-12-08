@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.side-bar{
+    width: 16%;
+    height: 100vh;
+    background-color: rgb(3, 9, 59);
+}
+.right-contents{
+    width: 84%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.accordion{
+    background-color: rgb(3, 9, 59);
+ 
+}
+.accordion-item{
+    border: none;
+}
+.accordion-button{
+    background-color: rgb(3, 9, 59);
+    color: white;
+
+}
+.accordion-button:focus{
+    background-color: rgb(3, 9, 59);
+    color: white;
+}
+.accordion-body{
+    background-color: rgb(3, 9, 59);
+}
+.accordion-body ul{
+    list-style-type: none;
+}
+.accordion-body ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+
+

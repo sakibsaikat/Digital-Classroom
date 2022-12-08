@@ -3,8 +3,20 @@
     padding: 0;
 }
 
+body{
+    /* background-color: rgb(38, 3, 20); */
+}
 .p1{
     color: crimson;
+}
+
+.body-part{
+    margin-top:80px;
+}
+
+
+.welcome{
+    color: rgb(170, 157, 157);
 }
 
 .heading{

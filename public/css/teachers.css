@@ -1,0 +1,52 @@
+.tcard{
+    width: 90%;
+    margin: 0px auto;
+    box-shadow: 3px 3px 15px rgba(225, 225, 225, 0.726);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.tcard img{
+    border-radius: 50%;
+    border: 2px solid blueviolet;
+}
+
+.row{
+    width: 90%;
+    margin: 0px auto;
+}
+
+.cbtn-card{
+    background: linear-gradient(45deg,rgb(3, 9, 59),rgb(42, 134, 239));
+    color: white;
+    border: none;
+}
+.cbtn-card:hover{
+
+    color: white;
+    border: none;
+}
+
+.tcard p{
+    margin: 0;
+}
+
+.right-contents::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  .right-contents::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+  .right-contents::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgb(3, 9, 59),rgb(42, 134, 239));
+    border-radius: 30px;
+  }
+  
+  /* Handle on hover */
+  .right-contents::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(rgb(3, 9, 59),rgb(42, 134, 239));
+  }

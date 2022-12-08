@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Alt Z - for line format -->
+    <!-- ctrl / - comment -->
+    <link rel="stylesheet" href="/css/studentdashboard.css">
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-5" href="#">NUB DIGITAL CLASSROOM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 me-5">
+                    <li class="nav-item">
+                        <a class="btn btn-dark btn-sm mt-2" href="#"><i class="fa-solid fa-plus me-1"></i>Join
+                            Class</a>
+                    </li>
+
+                    <li class="nav-item pro-pic">
+                        <img id="img-btn" class="profile-pic" src="/img/avatar.png" alt="">
+
+                        <form action="/upimg/USER1" method="post" enctype="multipart/form-data">
+
+                            <div class="up-card text-center">
+                                <img id="up-btn" src="/img/up.png" alt="" width="100">
+                                <br>
+                                <input id="up-btn-hide" type="file" name="profile" hidden onchange="document.getElementById('up-btn').src = window.URL.createObjectURL(this.files[0])">
+                                <button type="submit" class="btn btn-dark btn-sm mt-3">Upload</button>
+                            </div>
+
+                        </form>
+                        
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Rima Akter
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Setting</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="classes mt-5">
+
+        <div class="row gy-5">
+
+            <div class="col-md-3">
+                <div class="class-box">
+                    <div class="card-head card-head-2">
+                        <p class="fs-5 text-light mb-0 fw-bold">Computer Network</p>
+                        <p class="fs-6 text-light mt-0">CSE 4421</p>
+                    </div>
+                    <div class="img-teacher text-end">
+                        <img class="teacher-pic me-4" src="/img/R.jpg" alt="">
+                    </div>
+                    <div class="cards-body p-3">
+                        <p class="text-muted class-time">Time: 12:20-1.50 PM</p>
+
+                        <div class="btns text-end">
+                            <a href="#" class="btn cbtn-3 mt-4 card-head-2">View</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <p class="display-6"><%= userID %></p>
+       
+
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+        let img_box = document.getElementsByClassName("up-card")[0];
+        let img_btn = document.getElementById("img-btn");
+        let hidden_btn = document.getElementById("up-btn-hide");
+        let up_btn = document.getElementById("up-btn");
+
+        let img_div = document.getElementById("img-div");
+
+        up_btn.addEventListener('click',()=>{
+            hidden_btn.click();
+        });
+
+
+        let img_box_visibility=0;
+
+        img_btn.addEventListener('click',()=>{
+            if(img_box_visibility==0)
+            {
+                img_box.style.display = "block";
+                img_box_visibility=1;
+            }else{
+                img_box.style.display = "none"
+                img_box_visibility=0;
+            }
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
