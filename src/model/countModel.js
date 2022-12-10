@@ -10,6 +10,14 @@ let CountCollection = new mongo.Schema({
         type:String,
         require:true
     },
+    room:{
+        type:String,
+        require:true
+    },
+    post:{
+        type:String,
+        require:true
+    },
 
     status:{
         type:String,

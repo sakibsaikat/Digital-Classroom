@@ -1,0 +1,11 @@
+      <%= cdata.forEach(function(cval){ %>
+
+                        <div class="cmnt d-flex justify-content-end">
+                            <div class="cmnts">
+                                <h6><%= cval.cname %></h6>
+                                <p><%= cval.comment %></p>
+                                <p><%= cval.time %></p>
+                            </div>
+                        </div>
+
+                    <% }) %>

@@ -43,28 +43,31 @@ exports.getDataAPI = async (req, res) => {
 
 
 exports.checkLogin = async (req,res)=>{
-  
-    if(!req.session.userID){
 
-        var student = await StudentModel.find({email:req.body.email});
+        if(!req.session.userID){
+            let reqemail = req.body.email;
 
-        student.forEach(function(val){
-            em = val.email;
-            ps=val.password;
-            stu_id=val.id;
-        });
+            var student = await StudentModel.find({email:reqemail});
     
-        if(em==req.body.email){
-            if(ps==req.body.password){
-                req.session.userID=stu_id;
-                res.redirect('/sdash');
-            }
-        }else{
-            console.log("No User Found.");
-        }
-    
+            student.forEach(function (val) {
+                email = val.email;
+                ps = val.password;
+                stu_id = val.id;
+            });
         
-    }
-    res.render('Student/slogin');
+            if(email==reqemail){
+                if(ps==req.body.password){
+                    req.session.userID=stu_id;
+                    res.redirect('/sdash');
+                }
+            }else{
+                console.log("No User Found.");
+            }
+        
+            
+        }
+        res.render('Student/slogin');
+    
 
 }
+   

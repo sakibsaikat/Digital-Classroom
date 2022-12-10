@@ -5,9 +5,19 @@ const app = express.Router();
 const multer = require('multer');
 const studentmodel = require('./../model/studentModel');
 const teachertmodel = require('./../model/teacherModel');
+const roomModel = require('./../model/roomModel');
+const classModel = require('./../model/classDetailsModel');
+const PostModel = require('./../model/teacherPostModel');
+let CommentModel = require('./../model/commentModel');
+
 const TeacherController = require('./../controller/TeacherController');
 const StudentController = require('./../controller/StudentController');
 const CountController = require('./../controller/countController');
+const RoomController = require('./../controller/roomController');
+const ClassDetailsController = require('./../controller/classDetailsController');
+const teacherPostController = require('./../controller/teacherPostController');
+const commentController = require('./../controller/commentController');
+
 
 
 app.use(session({
@@ -79,7 +89,8 @@ const storage2 = multer.diskStorage({
     },
     filename:async (req,file,cb)=>{
         let fileName = req.params.id+path.extname(file.originalname);
-        let updateprofile = await teachertmodel.findOneAndUpdate({id:req.params.id},{profile:fileName});
+        let updateprofile = await teachertmodel.findOneAndUpdate({teacher_id:req.params.id},{profile:fileName});
+        console.log(updateprofile);
         cb(null,req.params.id+path.extname(file.originalname));
     }
 });
@@ -121,14 +132,74 @@ app.post('/slogin',StudentController.checkLogin);
 
 
 app.get('/sdash',redirectLogin,async (req,res)=>{
+
     
     const stdata = await studentmodel.find({id:req.session.userID});
+    const roomData = await classModel.find({student_id:req.session.userID});
+
+    let teachers = [];
+    let qarray = [];
+    let i=0;
+    roomData.forEach(function(val){
+        qarray[i]={
+            room_no:val.room_no
+        };
+        teachers[i]={
+            teacher_id:val.teacher_id
+        };
+
+        i++;
+    });
+
+    try{
+
+        teacherInfo = await teachertmodel.find({$or: teachers});
+        roomInfo = await roomModel.find({$or: qarray});
+
+    }catch(err){
+        teacherInfo = {};
+        roomInfo = {};
+        console.log(err);
+    }
+
+   
+
+
     res.render('Student/studentdashboard',{
-        data:stdata
+        data:stdata,
+        room:roomInfo,
+        tdata:teacherInfo
     });
     
     
 });
+
+//Show Post for student
+app.get('/spost/:rid/:tid/:stid',redirectLogin,async (req,res)=>{
+
+    try{
+        let tdata = await teachertmodel.find({teacher_id:req.params.tid});
+        let rdata = await roomModel.find({room_no:req.params.rid});
+        let pdata = await PostModel.find({room_no:req.params.rid});
+        let cdata = await CommentModel.find({room_no:req.params.rid});
+        let sdata = await studentmodel.find({id:req.params.stid});
+
+        res.render('Student/studentpost',{
+            tdata:tdata,
+            rdata:rdata,
+            pdata:pdata,
+            cdata:cdata,
+            sdata:sdata
+        });
+
+    }catch(err){
+        console.log(err);
+    }
+
+    
+});
+//Teacher Send Comment
+app.post('/stsendcomment',redirectLogin,commentController.sendStDataAPI);
 
 
 
@@ -158,10 +229,38 @@ app.post('/tlogin',TeacherController.checkLogin);
 //Teacher Dashboard
 app.get('/tdash',redirectTLogin,async (req,res)=>{
     let tdata = await teachertmodel.find({teacher_id:req.session.userID});
+    let rdata = await roomModel.find({teacher_id:req.session.userID});
     res.render('Teacher/teacherdashboard',{
-        data:tdata
+        data:tdata,
+        rdata:rdata
     });
 });
+//Teacher Post
+app.get('/tpost/:rid/:tid',redirectTLogin,async (req,res)=>{
+
+    try{
+        let tdata = await teachertmodel.find({teacher_id:req.params.tid});
+        let rdata = await roomModel.find({room_no:req.params.rid});
+        let pdata = await PostModel.find({room_no:req.params.rid});
+        let cdata = await CommentModel.find({room_no:req.params.rid});
+
+        res.render('Teacher/teacherpost',{
+            tdata:tdata,
+            rdata:rdata,
+            pdata:pdata,
+            cdata:cdata
+        });
+
+    }catch(err){
+        console.log(err);
+    }
+
+    
+});
+//Teacher posting...
+app.post('/create_post',teacherPostController.sendDataAPI);
+//Teacher Send Comment
+app.post('/sendcomment',commentController.sendDataAPI);
 
 
 
@@ -202,5 +301,16 @@ app.get('/admindash',(req,res)=>{
 app.get('/admindash/teacher',TeacherController.getDataAPI);
 app.get('/admindash/student',StudentController.getDataAPI);
 app.get('/count',CountController.getDataAPI);
+
+
+
+
+//Room Route Section
+app.get('/createroom',redirectTLogin,(req,res)=>{
+    res.render('Teacher/createRoom');
+})
+
+app.post('/sendRoomData',RoomController.sendDataAPI);
+app.post('/join_room',redirectLogin,ClassDetailsController.sendDataAPI);
 
 module.exports = app;

@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-5" href="#">NUB DIGITAL CLASSROOM</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 me-5">
+                <li class="nav-item">
+                    <a class="btn btn-dark btn-sm mt-2" href="#"><i class="fa-solid fa-plus me-1"></i>Create
+                        Class</a>
+                </li>
+
+                <li class="nav-item pro-pic">
+                    <% if(val.profile){ %>
+                        <img id="img-btn" class="profile-pic" src="/uploads/<%= val.profile %>" alt="avatar">
+                    <% }else{ %>
+                        <img id="img-btn" class="profile-pic" src="/img/avatar.png" alt="avatar">
+                    <% } %>
+
+                    <form action="/uptimg/<%= val.teacher_id %>" method="post" enctype="multipart/form-data">
+
+                        <div class="up-card text-center">
+                            <% if(val.profile){ %>
+                                <img id="up-btn" src="/uploads/<%= val.profile %>" alt="" width="100">
+                            <% }else{ %>
+                                <img id="up-btn" src="/img/up.png" alt="" width="100">
+                            <% } %>
+                            <br>
+                            <input id="up-btn-hide" type="file" name="profile" hidden onchange="document.getElementById('up-btn').src = window.URL.createObjectURL(this.files[0])">
+                            <button type="submit" class="btn btn-dark btn-sm mt-3">Upload</button>
+                        </div>
+
+                    </form>
+                    
+                </li>
+
+                <li class="nav-item dropdown me-5">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <%= val.name %>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Setting</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/logoutT">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

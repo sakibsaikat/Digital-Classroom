@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 me-5">
                     <li class="nav-item">
-                        <a class="btn btn-dark btn-sm mt-2" href="#"><i class="fa-solid fa-plus me-1"></i>Create
+                        <a class="btn btn-dark btn-sm mt-2" href="/createroom"><i class="fa-solid fa-plus me-1"></i>Create
                             Class</a>
                     </li>
 
@@ -41,7 +41,7 @@
                             <img id="img-btn" class="profile-pic" src="/img/avatar.png" alt="avatar">
                         <% } %>
 
-                        <form action="/uptimg/<%= val.id %>" method="post" enctype="multipart/form-data">
+                        <form action="/uptimg/<%= val.teacher_id %>" method="post" enctype="multipart/form-data">
 
                             <div class="up-card text-center">
                                 <% if(val.profile){ %>
@@ -77,87 +77,77 @@
         </div>
     </nav>
 
+    
+
 
     <div class="classes mt-5">
 
         <div class="row gy-5">
 
+            <% let x=0; %>
+            <% let classes=0; %>
+
+            <% rdata.forEach(function(rval){  %>
+                
+               <% x=(x+1)%5; %>
+
             <div class="col-md-3">
-                <div class="class-box">
-                    <div class="card-head card-head-1">
-                        <p class="fs-5 text-light mb-0 fw-bold">Computer Network</p>
-                        <p class="fs-6 text-light mt-0">CSE 4421</p>
+                <div class="class-box t-box">
+                    <div class="card-head card-head-<%= x %>">
+                        <p class="fs-5 text-light mb-0 fw-bold"><%= rval.course_title %></p>
+                        <p class="fs-6 text-light mt-0"><%= rval.course_code %></p>
                     </div>
                     <div class="img-teacher text-end">
-                        <img class="teacher-pic me-4" src="/img/R.jpg" alt="">
+                        <% if(val.profile){ %>
+                            <img class="teacher-pic me-4" src="/uploads/<%= val.profile %>" alt="" >
+                        <% }else{ %>
+                            <img class="teacher-pic me-4" src="/img/avatar.png" alt="">
+                        <% } %>
                     </div>
                     <div class="cards-body p-3">
-                        <p class="text-muted class-time">Time: 12:20-1.50 PM</p>
+                        <p class="text-muted class-time">Time: <%= rval.class_start_time %> - <%= rval.class_end_time %></p>
 
-                        <div class="btns text-end">
-                            <a href="#" class="btn cbtn-3 mt-4 card-head-1">View</a>
+                        <div class="btns d-flex justify-content-between">
+                            <a href="#" class="btn code-btn mt-4 btn-outline-dark" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal<%= classes %>"><i class="fa-solid fa-users-between-lines"></i></a>
+                            
+                                <div class="mb-0 mt-4">
+                                    <a href="/tpost/<%= rval.room_no %>/<%= rval.teacher_id %>" class="btn btn-secondary text-light btn-sm">Go to Room</a>
+                                </div>
+                            
                         </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal<%= classes %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Room Number</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h2 class="text-muted text-center"><%= rval.room_no %></h2>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="/tdash" class="btn btn-primary">Copy</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <% classes++; %>
                     </div>
 
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="class-box">
-                    <div class="card-head card-head-2">
-                        <p class="fs-5 text-light mb-0 fw-bold">Computer Network</p>
-                        <p class="fs-6 text-light mt-0">CSE 4421</p>
-                    </div>
-                    <div class="img-teacher text-end">
-                        <img class="teacher-pic me-4" src="/img/R.jpg" alt="">
-                    </div>
-                    <div class="cards-body p-3">
-                        <p class="text-muted class-time">Time: 12:20-1.50 PM</p>
 
-                        <div class="btns text-end">
-                            <a href="#" class="btn cbtn-3 mt-4 card-head-2">View</a>
-                        </div>
-                    </div>
+            <% }) %>
 
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="class-box">
-                    <div class="card-head card-head-3">
-                        <p class="fs-5 text-light mb-0 fw-bold">Computer Network</p>
-                        <p class="fs-6 text-light mt-0">CSE 4421</p>
-                    </div>
-                    <div class="img-teacher text-end">
-                        <img class="teacher-pic me-4" src="/img/R.jpg" alt="">
-                    </div>
-                    <div class="cards-body p-3">
-                        <p class="text-muted class-time">Time: 12:20-1.50 PM</p>
 
-                        <div class="btns text-end">
-                            <a href="#" class="btn cbtn-3 mt-4 card-head-3">View</a>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="class-box">
-                    <div class="card-head card-head-4">
-                        <p class="fs-5 text-light mb-0 fw-bold">Computer Network</p>
-                        <p class="fs-6 text-light mt-0">CSE 4421</p>
-                    </div>
-                    <div class="img-teacher text-end">
-                        <img class="teacher-pic me-4" src="/img/R.jpg" alt="">
-                    </div>
-                    <div class="cards-body p-3">
-                        <p class="text-muted class-time">Time: 12:20-1.50 PM</p>
 
-                        <div class="btns text-end">
-                            <a href="#" class="btn cbtn-3 mt-4 card-head-4">View</a>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
 
         </div>
 
@@ -165,6 +155,8 @@
 
 
     <% }) %>
+
+
 
     <script>
         let img_box = document.getElementsByClassName("up-card")[0];

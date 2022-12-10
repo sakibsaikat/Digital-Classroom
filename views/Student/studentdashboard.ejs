@@ -21,133 +21,238 @@
     <% data.forEach(function(val){ %>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand ms-5" href="#">NUB DIGITAL CLASSROOM</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 me-5">
-                    <li class="nav-item">
-                        <a class="btn btn-dark btn-sm mt-2" href="#"><i class="fa-solid fa-plus me-1"></i>Join
-                            Class</a>
-                    </li>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-5" href="#">NUB DIGITAL CLASSROOM</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 me-5">
+                        <li class="nav-item">
+                            <a class="btn btn-dark btn-sm mt-2" href="#" data-bs-toggle="modal"
+                                data-bs-target="#exampleModalx"><i class="fa-solid fa-plus me-1"></i>Join
+                                Class</a>
+                        </li>
 
-                    <li class="nav-item pro-pic">
-                        <% if(val.profile){ %>
-                            <img id="img-btn" class="profile-pic" src="/uploads/<%= val.profile %>" alt="avatar">
-                        <% }else{ %>
-                            <img id="img-btn" class="profile-pic" src="/img/avatar.png" alt="avatar">
-                        <% } %>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalx" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <form id="form2">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Join Room</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="my-3">
+                                                <input type="text" class="form-control" id="room_no" name="room_no"
+                                                    placeholder="Enter Room No.">
 
-                        <form action="/upimg/<%= val.id %>" method="post" enctype="multipart/form-data">
+                                                    <input type="text" name="student_id" id="student_id" value="<%= val.id %>" hidden>
+                                            </div>
+                                        </div>
 
-                            <div class="up-card text-center">
-                                <% if(val.profile){ %>
-                                    <img id="up-btn" src="/uploads/<%= val.profile %>" alt="" width="100">
-                                <% }else{ %>
-                                    <img id="up-btn" src="/img/up.png" alt="" width="100">
-                                <% } %>
-                                <br>
-                                <input id="up-btn-hide" type="file" name="profile" hidden onchange="document.getElementById('up-btn').src = window.URL.createObjectURL(this.files[0])">
-                                <button type="submit" class="btn btn-dark btn-sm mt-3">Upload</button>
+                                        <div class="modal-footer">
+                                            <button id="sbtn" class="btn btn-dark">Join</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-
-                        </form>
-                        
-                    </li>
-
-                    <li class="nav-item dropdown me-5">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <%= val.name %>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Setting</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    <div class="classes mt-5">
-
-        <div class="row gy-5">
-
-            <div class="col-md-3">
-                <div class="class-box">
-                    <div class="card-head card-head-2">
-                        <p class="fs-5 text-light mb-0 fw-bold">Computer Network</p>
-                        <p class="fs-6 text-light mt-0">CSE 4421</p>
-                    </div>
-                    <div class="img-teacher text-end">
-                        <img class="teacher-pic me-4" src="/img/R.jpg" alt="">
-                    </div>
-                    <div class="cards-body p-3">
-                        <p class="text-muted class-time">Time: 12:20-1.50 PM</p>
-
-                        <div class="btns text-end">
-                            <a href="#" class="btn cbtn-3 mt-4 card-head-2">View</a>
                         </div>
-                    </div>
 
+
+
+
+                        <!-- Button trigger modal -->
+                        <button hidden type="button" id="success-btn" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal1">
+                            created
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Room Status</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h2>Joined Successfully</h2>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="/sdash" class="btn btn-primary">Go to Dashboard</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <li class="nav-item pro-pic">
+                            <% if(val.profile){ %>
+                                <img id="img-btn" class="profile-pic" src="/uploads/<%= val.profile %>" alt="avatar">
+                                <% }else{ %>
+                                    <img id="img-btn" class="profile-pic" src="/img/avatar.png" alt="avatar">
+                                    <% } %>
+
+                                        <form action="/upimg/<%= val.id %>" method="post" enctype="multipart/form-data">
+
+                                            <div class="up-card text-center">
+                                                <% if(val.profile){ %>
+                                                    <img id="up-btn" src="/uploads/<%= val.profile %>" alt=""
+                                                        width="100">
+                                                    <% }else{ %>
+                                                        <img id="up-btn" src="/img/up.png" alt="" width="100">
+                                                        <% } %>
+                                                            <br>
+                                                            <input id="up-btn-hide" type="file" name="profile" hidden
+                                                                onchange="document.getElementById('up-btn').src = window.URL.createObjectURL(this.files[0])">
+                                                            <button type="submit"
+                                                                class="btn btn-dark btn-sm mt-3">Upload</button>
+                                            </div>
+
+                                        </form>
+
+                        </li>
+
+                        <li class="nav-item dropdown me-5">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <%= val.name %>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Setting</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </nav>
 
 
-            <p class="display-6"><%= val.id %></p>
-       
+        <div class="classes mt-5">
+
+            <div class="row gy-5">
+
+                <% if(!(Object.keys(room).length === 0)){ %>
+
+                <% room.forEach(function(roomVal){ %>
+
+                <div class="col-md-3">
+                    <div class="class-box">
+                        <div class="card-head card-head-2">
+                            <p class="fs-5 text-light mb-0 fw-bold"><%= roomVal.course_title %></p>
+                            <p class="fs-6 text-light mt-0 mb-0"><%= roomVal.course_code %></p>
+
+
+
+                            <% let isPic = 0 %>
+
+                            <% tdata.forEach(function(tval){
+
+                                
+
+                                if(tval.teacher_id==roomVal.teacher_id && isPic==0){ %>
+                                    <% isPic=1; %>
+                                <p class="fs-6 text-light mt-0">Teacher: <b><%= tval.name %></b></p>
+                        </div>
+                        <div class="img-teacher text-end">
+
+                           
+                                <% if(tval.profile){ %>
+                                    
+                                    <img class="teacher-pic me-4" src="/uploads/<%= tval.profile %>" alt="db">
+                                <% }else{ %>
+                                        <img class="teacher-pic me-4" src="/img/R.jpg" alt="lc">
+                                    <% } %> 
+
+                                    <%  %>
+
+                                <% } %>
+                                    
+
+                           <% }) %>
+
+                           <% isPic=0 %>
+
+                            
+                        </div>
+                        <div class="cards-body p-3">
+                            <p class="text-muted class-time">Time: <%= roomVal.class_start_time %>-<%= roomVal.class_end_time %> PM</p>
+
+                       
+
+                            <div class="btns text-end">
+                                <a href="/spost/<%= roomVal.room_no %>/<%= roomVal.teacher_id %>/<%= val.id %>" class="btn cbtn-3 mt-4 card-head-2">View</a>
+                            </div>
+
+  
+                        </div>
+
+                    </div>
+                </div>
+
+                <% }) }%>
+
+
+            </div>
+
+
 
         </div>
 
+        <% }) %>
 
 
-    </div>
+            <script>
+                let img_box = document.getElementsByClassName("up-card")[0];
+                let img_btn = document.getElementById("img-btn");
+                let hidden_btn = document.getElementById("up-btn-hide");
+                let up_btn = document.getElementById("up-btn");
 
-    <% }) %>
+                let img_div = document.getElementById("img-div");
 
-
-    <script>
-        let img_box = document.getElementsByClassName("up-card")[0];
-        let img_btn = document.getElementById("img-btn");
-        let hidden_btn = document.getElementById("up-btn-hide");
-        let up_btn = document.getElementById("up-btn");
-
-        let img_div = document.getElementById("img-div");
-
-        up_btn.addEventListener('click',()=>{
-            hidden_btn.click();
-        });
+                up_btn.addEventListener('click', () => {
+                    hidden_btn.click();
+                });
 
 
-        let img_box_visibility=0;
+                let img_box_visibility = 0;
 
-        img_btn.addEventListener('click',()=>{
-            if(img_box_visibility==0)
-            {
-                img_box.style.display = "block";
-                img_box_visibility=1;
-            }else{
-                img_box.style.display = "none"
-                img_box_visibility=0;
-            }
-        });
-    </script>
+                img_btn.addEventListener('click', () => {
+                    if (img_box_visibility == 0) {
+                        img_box.style.display = "block";
+                        img_box_visibility = 1;
+                    } else {
+                        img_box.style.display = "none"
+                        img_box_visibility = 0;
+                    }
+                });
+            </script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+
+            <script src="/js/join_room.js"></script>
 </body>
 
 </html>

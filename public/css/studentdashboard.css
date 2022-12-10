@@ -33,14 +33,20 @@ body{
     box-shadow: 3px 3px 15px rgba(225, 225, 225, 0.548);
     background-color: rgb(255, 255, 255);
     height: 250px;
-    
     border-radius: 10px;
     overflow: hidden;
+    transition: 1s;
+    cursor: pointer;
+}
+.classes .row .col-md-3 .class-box:hover{
+
+    box-shadow: 3px 3px 15px rgba(174, 172, 172, 0.354);
+
 }
 
 .class-box .card-head{
     width: 100%;
-    height: 100px;
+    height: 110px;
     padding: 20px;
 
 }
@@ -111,3 +117,5 @@ body{
     border: 3px solid rgb(77, 96, 236);
     outline: 5px solid rgba(77, 95, 236, 0.300);
 }
+
+
