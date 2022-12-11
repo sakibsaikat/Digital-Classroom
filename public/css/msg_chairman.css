@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.maindiv{ 
+    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-left: 150px;
+    text-align: justify;
+}
+
+.maindiv .image{
+width: 20%;
+
+}
+
+.maindiv .content{
+width: 80%;
+}
+.image img{ 
+    border:2px solid navy ;
+    height: 200px;
+}
+.div2{
+   max-width:90%;
+}
+

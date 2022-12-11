@@ -31,9 +31,7 @@ exports.sendDataAPI = async (req,res)=>{
         teacher_id,name,email,password,gender,contact,department,status
     }).save();
 
-    res.render('teacherReg',{
-        sendStatus:"true"
-    });
+    res.redirect('/regtec/success');
 
 
 }

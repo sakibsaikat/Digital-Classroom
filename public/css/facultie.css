@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding:0 ;
+}
+.maindiv{
+    margin-left: 190px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    text-align: justify;
+}
+.div1{
+    max-width: 90%;
+}

@@ -29,9 +29,7 @@ exports.sendDataAPI = async (req,res) => {
     let sendData = await new StudentModel({
         id,name, student_id, email, password, department, gender, contact, status
     }).save();
-    res.render('studentReg', {
-        sendStatus: "true"
-    });
+    res.redirect('/regstu/success');
 }
 
 exports.getDataAPI = async (req, res) => {

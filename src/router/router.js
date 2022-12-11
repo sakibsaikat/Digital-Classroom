@@ -100,9 +100,34 @@ const uploadteacher = multer({storage:storage2});
 
 
 
-//Homepage Route Section
+//Web Homepage route
+
 app.get('/',(req,res)=>{
     res.render('index');
+});
+
+app.get('/about',(req,res)=>{
+    res.render('about-nub');
+});
+app.get('/msgc',(req,res)=>{
+    res.render('msg_chairman');
+});
+app.get('/msgvc',(req,res)=>{
+    res.render('msg_vc');
+});
+app.get('/vision',(req,res)=>{
+    res.render('vision');
+});
+app.get('/faculty',(req,res)=>{
+    res.render('faculty');
+});
+
+
+
+
+//Class Room Homepage Route Section
+app.get('/home',(req,res)=>{
+    res.render('home');
 });
 
 
@@ -113,9 +138,19 @@ app.get('/regtec',(req,res)=>{
         sendStatus:"false"
     });
 }); 
+app.get('/regtec/success',(req,res)=>{
+    res.render('teacherReg',{
+        sendStatus:"true"
+    });
+}); 
 app.get('/regstu',(req,res)=>{
     res.render('studentReg',{
         sendStatus:"false"
+    });
+});
+app.get('/regstu/success',(req,res)=>{
+    res.render('studentReg',{
+        sendStatus:"true"
     });
 });
 

@@ -1,59 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/tanim.css">
+    
+  </head>
+  
+  <body>
+  
+    <div class="top-header">
+      <ul>
+        <li><a href="#">student load</a></li>
+        <li><a href="#">online admission</a></li>
+        <li><a href="#">registration package</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">student portal</a></li>
+        <li><a href="#">alumni</a></li>
+        <li><a href="#">publication</a></li>
+        <li><a href="#">degree verification</a></li>
+        <li><a href="#">vaccine</a></li>
+        <a href="/home" type="button" class="btn btn-dark btn-sm position-relative">
+          <b>Digital Classroom</b>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+            NEW
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </a>
+      </ul>
+      <div class="social-links">
+        <a href="#"
+          ><i class="fa-brands fa-square-facebook mx-2 text-light"></i
+        ></a>
+        <a href="#"><i class="fa-brands fa-youtube mx-2 text-light"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin mx-2 text-light"></i></a>
+      </div>
+    </div>
+    <%- include('./partials/navbar.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/img/blackboard.png">
-    <title>DIGITAL CLASSROOM</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/index.css">
-
-</head>
-
-<body>
 
 
-
-    <div class="body-part d-flex justify-content-center">
-        <img src="/img/digital-classroom.png" alt="" width="650">
+    <div class="slider">
+        <div class="overlay">
+        
+        </div>
     </div>
 
-    <p class="display-6 text-center mt-4 welcome">WELCOME TO NUB DIGITAL CLASSROOM</p>
+    <h1 class="ml11">
+      <span class="text-wrapper">
+        <span class="line line1"></span>
+        <span class="letters">Northern University Bangladesh</span>
+      </span>
+    </h1>
+    
+    
 
-    <div class="right text-center mt-4 d-flex justify-content-center">
 
-        <div class="dropdown">
-            <button class="btn cbtn-1 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Login
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="/slogin">Login As Student</a></li>
-                <li><a class="dropdown-item" href="/tlogin">Login As Teacher</a></li>
-            </ul>
+
+
+
+    <div class="updates">
+      <marquee class="updates-bg" behavior="" direction="rtl"
+        >>> Admission Going On. <a href="#">Click here</a></marquee
+      >
+    </div>
+
+    <div class="row section-1 mt-4">
+        
+      <div class="col-md-8 notice-board-left">
+        <p class="display-6 fs-4 text-center">Notice Board</p>
+        
+        <div class="notice-board">
+          <p class="notice-title1 bg-light">Latest Notice</p>
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
         </div>
-        <div class="dropdown ms-3">
-            <button class="btn cbtn-2 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Register
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="/regstu">Register As Student</a></li>
-                <li><a class="dropdown-item" href="/regtec">Register As Teacher</a></li>
-            </ul>
+      </div>
+     
+
+      <div class="col-md-4">
+        <p class="display-6 fs-4 text-center">Event Calender</p>
+        <div class="notice-board">
+          <p class="notice-title">Latest Events</p>
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
+          <div class="notice-item">
+            <h6>National Holiday Tomorrow.</h6>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="dates text-muted">12 Nov, 2022</p>
+          </div>
+          <hr class="notice-hr" />
         </div>
+      </div>
     </div>
 
 
+    <p class="display-6 text-center mb-4 mt-5 fs-3">Accreditaion & Collaboration</p>
+
+    <div class="row section-2 mt-5">
+        <div class="col-md-6 d-md-flex justify-content-center">
+          <div class="notice-board-1 ">
+            <p class="notice-title">LATEST NEWS</p>
+            <div class="notice-item">
+              <h6>National Holiday Tomorrow.</h6>
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <p class="dates text-muted">12 Nov, 2022</p>
+            </div>
+            <hr class="notice-hr" />
+            <div class="notice-item">
+              <h6>National Holiday Tomorrow.</h6>
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <p class="dates text-muted">12 Nov, 2022</p>
+            </div>
+            <hr class="notice-hr" />
+            <div class="notice-item">
+              <h6>National Holiday Tomorrow.</h6>
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <p class="dates text-muted">12 Nov, 2022</p>
+            </div>
+            <hr class="notice-hr" />
+            <div class="notice-item">
+              <h6>National Holiday Tomorrow.</h6>
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <p class="dates text-muted">12 Nov, 2022</p>
+            </div>
+            <hr class="notice-hr" />
+          </div>
+        </div>
+       
+  
+        <div class="col-md-6">
+          <div class="notice-board-1 ">
+            <p class="notice-title">WEBINAR</p>
+            <div class="notice-item">
+              <h6>National Holiday Tomorrow.</h6>
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <p class="dates text-muted">12 Nov, 2022</p>
+            </div>
+            <hr class="notice-hr" />
+            <div class="notice-item">
+              <h6>National Holiday Tomorrow.</h6>
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <p class="dates text-muted">12 Nov, 2022</p>
+            </div>
+            <hr class="notice-hr" />
+            <div class="notice-item">
+              <h6>National Holiday Tomorrow.</h6>
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <p class="dates text-muted">12 Nov, 2022</p>
+            </div>
+            <hr class="notice-hr" />
+            <div class="notice-item">
+              <h6>National Holiday Tomorrow.</h6>
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <p class="dates text-muted">12 Nov, 2022</p>
+            </div>
+            <hr class="notice-hr" />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="important-links p-5 bg-light my-5">
+        <p class="display-6 fs-4 ms-3 text-muted">Important Links</p>
+        <div class="links d-flex justify-content-center">
+            <a href="#" class="mx-3">
+                <img src="img/one.png" alt="" width="60%">
+            </a>
+            <a href="#" class="mx-3">
+                <img src="img/two.png" alt="" width="60%">
+            </a>
+            <a href="#" class="mx-3">
+                <img src="img/four.png" alt="" width="60%">
+            </a>
+            <a href="#" class="mx-3">
+                <img src="img/999.png" alt="" width="60%">
+            </a>
+        </div>
+      </div>
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-</body>
+      <!-- contact sction -->
 
+     
+      <%- include('./partials/contact.ejs') %>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- text animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="/js/tanim.js"></script>
+  </body>
 </html>
