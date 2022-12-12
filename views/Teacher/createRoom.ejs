@@ -21,16 +21,17 @@
 
 
     <div class="form-box">
+        <a href="/tdash" class="btn btn-danger btn-sm"><i class="fa-solid fa-house"></i></a>
         <p class="display-6 text-center">Create Class Room</p>
 
         <form action="#" id="form1">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="course_title" name="course_title"
+                <input required type="text" class="form-control" id="course_title" name="course_title"
                     placeholder="course title">
                 <label for="course_title">Course Title</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="course_code" name="course_code" placeholder="course_code">
+                <input required type="text" class="form-control" id="course_code" name="course_code" placeholder="course_code">
                 <label for="course_code">Course Code</label>
             </div>
             <div class="form-floating mt-3">
@@ -77,14 +78,14 @@
                 <div class="time">
                     <div class="form-floating">
                         <input type="time" class="form-control" id="class_start_time" name="class_start_time"
-                            placeholder="Password">
+                            placeholder="Password" required>
                         <label for="class_start_time">Class Start Time</label>
                     </div>
                 </div>
                 <div class="time">
                     <div class="form-floating">
                         <input type="time" class="form-control" id="class_end_time" name="class_end_time"
-                            placeholder="Password">
+                            placeholder="Password" required>
                         <label for="class_end_time">Class End Time</label>
                     </div>
                 </div>

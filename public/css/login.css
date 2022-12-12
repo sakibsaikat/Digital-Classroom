@@ -6,7 +6,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(#ff0099,#493240);
+    /* background: linear-gradient(#ff0099,#493240); */
+    background: linear-gradient(135deg, #85d0f9 10%, #10025a 100%);
 }
 
 
@@ -26,7 +27,7 @@ input{
     outline: none;
     display: block;
     background-color: rgb(57, 6, 6);
-    color: crimson;
+    color: rgb(223, 240, 249);
     border-radius: 5px;
     width: 90%;
     margin: 20px auto;
@@ -40,7 +41,8 @@ input{
     border-radius: 5px;
     width: 90%;
     color: white;
-    background: linear-gradient(to right,#ff0099,#493240);
+    /* background: linear-gradient(to right,#ff0099,#493240); */
+    background: linear-gradient(135deg, #74cbfa 10%, #130363 100%);
 }
 
 .titles{

@@ -2,6 +2,8 @@ const mongo = require("mongoose");
 const session = require('express-session');
 let StudentModel = require('./../model/studentModel');
 let CountModel = require('./../model/countModel');
+let ClassModel = require('./../model/classDetailsModel');
+
 
 exports.sendDataAPI = async (req,res) => {
     const {
@@ -36,6 +38,42 @@ exports.getDataAPI = async (req, res) => {
     var student = await StudentModel.find();
     res.render('Admin/students',{
         data:student
+    });
+}
+
+//Specific
+exports.getDataAPIS = async (req, res) => {
+
+    console.log(req.params.room_no);
+     
+    const roomData = await ClassModel.find({room_no:req.params.room_no});
+
+    let students = [];
+    let i=0;
+
+    roomData.forEach(function(val){
+
+        students[i]={
+            id:val.student_id
+        };
+
+        i++;
+    });
+
+    console.log(students);
+
+    try{
+        studentInfo = await StudentModel.find({$or: students});
+    }catch(err){
+        studentInfo = {};
+        console.log(err);
+    }
+
+
+    console.log(studentInfo);
+
+    res.render('Teacher/studentlist',{
+        data:studentInfo
     });
 }
 

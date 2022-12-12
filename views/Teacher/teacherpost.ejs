@@ -21,13 +21,20 @@
 
 
 
+    <% rdata.forEach(function(val){ %>
 
+        <div class="btns text-center">
+            <a href="/slist/<%= val.room_no %>" class="btn btn-primary">Students</a>
+        </div>
+    
 
     <div class="posts mt-5">
+        
+        <a href="/tdash" class="btn btn-primary btn-sm left-home"><i class="fa-solid fa-house"></i></a>
 
         <div class="room_info_box">
             <div class="room_header">
-                <% rdata.forEach(function(val){ %>
+                
 
                     <p class="display-6 fs-4">
                         <%= val.course_title %>
@@ -74,6 +81,7 @@
 
         <div class="create-post mt-5" id="create-box">
             <p class="mb-3 display-6 fs-5 text-center">Create Post</p>
+            
             <form action="/create_post" id="post" method="post">
                 <input type="text" name="room_no" hidden value="<%= val.room_no %>">
                 <input type="text" name="teacher_id" hidden value="<%= val.teacher_id %>">

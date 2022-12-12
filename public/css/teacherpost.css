@@ -25,7 +25,8 @@ body{
     height: 150px;
     width: 100%;
     /* background: linear-gradient(135deg, #FFF720 10%, #3CD500 100%); */
-    background: linear-gradient(135deg, #F761A1 10%, #8C1BAB 100%);
+    /* background: linear-gradient(135deg, #F761A1 10%, #8C1BAB 100%); */
+    background: linear-gradient(135deg, #74cbfa 10%, #130363 100%);
 }
 
 .room_header p{
@@ -145,4 +146,10 @@ hr.hr1{
 details{
     outline: none;
     border: none;
+}
+
+.left-home{
+    position: absolute;
+    top: 20px;
+    left: 30px;
 }

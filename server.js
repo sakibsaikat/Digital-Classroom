@@ -9,15 +9,6 @@ require('./src/db/conn');
 
 app.use(express.urlencoded());
 app.use(express.json());
-// app.use(cookie());
-// app.use(session({
-//     secret:"ThisIsARandomSecret",
-//     resave:true,
-//     saveUninitialized:true,
-//     cookie:{
-//         secure:true
-//     }
-// }));
 
 app.use(express.static('public'));
 app.set('view engine','ejs');

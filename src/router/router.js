@@ -296,6 +296,8 @@ app.get('/tpost/:rid/:tid',redirectTLogin,async (req,res)=>{
 app.post('/create_post',teacherPostController.sendDataAPI);
 //Teacher Send Comment
 app.post('/sendcomment',commentController.sendDataAPI);
+//Teacher List
+app.get('/slist/:room_no',StudentController.getDataAPIS);
 
 
 
