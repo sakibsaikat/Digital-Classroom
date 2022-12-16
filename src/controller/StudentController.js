@@ -43,8 +43,6 @@ exports.getDataAPI = async (req, res) => {
 
 //Specific
 exports.getDataAPIS = async (req, res) => {
-
-    console.log(req.params.room_no);
      
     const roomData = await ClassModel.find({room_no:req.params.room_no});
 
@@ -60,7 +58,6 @@ exports.getDataAPIS = async (req, res) => {
         i++;
     });
 
-    console.log(students);
 
     try{
         studentInfo = await StudentModel.find({$or: students});
@@ -69,8 +66,8 @@ exports.getDataAPIS = async (req, res) => {
         console.log(err);
     }
 
-
     console.log(studentInfo);
+
 
     res.render('Teacher/studentlist',{
         data:studentInfo

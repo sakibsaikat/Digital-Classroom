@@ -4,19 +4,23 @@ let CountCollection = new mongo.Schema({
 
     teacher:{
         type:String,
-        required:true
+        required:true,
+        default:"0"
     },
     student:{
         type:String,
-        require:true
+        require:true,
+        default:"0"
     },
     room:{
         type:String,
-        require:true
+        require:true,
+        default:"0"
     },
     post:{
         type:String,
-        require:true
+        require:true,
+        default:"0"
     },
 
     status:{

@@ -127,10 +127,10 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <h2 class="text-muted text-center"><%= rval.room_no %></h2>
+                                        <input class="class_code form-control text-muted text-center" value="<%= rval.room_no %>">
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="/tdash" class="btn btn-primary">Copy</a>
+                                        <button class="btn btn-primary cpy">Copy</button>
                                     </div>
                                 </div>
                             </div>
@@ -183,6 +183,19 @@
                 img_box_visibility=0;
             }
         });
+
+        let copybtn = document.getElementsByClassName('cpy');
+        let code_box = document.getElementsByClassName('class_code');
+        console.log(copybtn.length);
+        for(let x=0;x<copybtn.length;x++){
+            copybtn[x].addEventListener('click',()=>{
+            code_box[x].select();
+            document.execCommand('copy');
+        });
+
+        }
+        
+ 
     </script>
 
 

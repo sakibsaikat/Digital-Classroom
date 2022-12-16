@@ -23,7 +23,7 @@
 
     <% rdata.forEach(function(val){ %>
 
-        <div class="btns text-center">
+        <div class="btns w-100 d-flex justify-content-end mt-3">
             <a href="/slist/<%= val.room_no %>" class="btn btn-primary">Students</a>
         </div>
     
@@ -57,9 +57,9 @@
             <div class="image-section d-flex justify-content-end me-5">
                 <div class="timg">
                     <% if(val.profile){ %>
-                        <img src="/uploads/<%= val.profile %>" alt="" width="150">
+                        <img src="/uploads/<%= val.profile %>" alt="" width="160">
                         <% }else{ %>
-                            <img src="/img/R.jpg" alt="" width="150">
+                            <img src="/img/R.jpg" alt="" width="160">
                             <% } %>
                 </div>
             </div>
