@@ -1,0 +1,5 @@
+MVC
+Model  - To Define collections(Table)
+View - front end files (ejs/html files)
+Controller - data processing (CRUD)
+
