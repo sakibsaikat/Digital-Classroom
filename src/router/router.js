@@ -19,6 +19,19 @@ const teacherPostController = require('./../controller/teacherPostController');
 const commentController = require('./../controller/commentController');
 
 
+const {v4:uuid} = require('uuid');
+
+
+
+
+//video Conferencing
+app.get('/meeting/:roomId',(req,res)=>{
+    res.render('room',{
+        roomId:req.params.roomId
+    });
+});
+
+
 
 app.use(session({
     secret:"ThisIsARandomSecret",

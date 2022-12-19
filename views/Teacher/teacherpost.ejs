@@ -17,8 +17,9 @@
 
 <body>
 
-
-
+            <div class="d-block text-center">
+                <a href="/tdash" class="btn btn-danger btn-sm"><i class="fa-solid fa-house"></i></a>
+            </div>
 
 
     <% rdata.forEach(function(val){ %>
@@ -29,8 +30,8 @@
     
 
     <div class="posts mt-5">
-        
-        <a href="/tdash" class="btn btn-primary btn-sm left-home"><i class="fa-solid fa-house"></i></a>
+
+        <a href="/meeting/<%= val.room_no %>" target="_blank" class="btn btn-primary btn-sm left-home">Start Meeting</a>
 
         <div class="room_info_box">
             <div class="room_header">

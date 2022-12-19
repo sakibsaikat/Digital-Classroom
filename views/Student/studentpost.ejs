@@ -17,8 +17,12 @@
 
 <body>
 
+    <% rdata.forEach(function(val){ %>
 
 
+    <div class="d-block text-center mt-2">
+        <a href="/meeting/<%= val.room_no %>" target="_blank" class="btn btn-primary btn-sm left-home">Join Live Class</a>
+    </div>
 
 
 
@@ -28,8 +32,7 @@
 
         <div class="room_info_box">
             <div class="room_header">
-                <% rdata.forEach(function(val){ %>
-
+                
                     <p class="display-6 fs-4">
                         <%= val.course_title %>
                     </p>
